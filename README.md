@@ -1,1 +1,1 @@
-# ArUco-Marker-Detection-OpenCV
+# ArUco Marker Detection OpenCV

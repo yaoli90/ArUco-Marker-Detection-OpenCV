@@ -6,4 +6,4 @@ This project implements basic ArUco marker detection based on [ArUco library](ht
 
 ## Getting Started
 
-Install the library please refer the tutorial [Building and Installing OpenCV with Extra Modules on Windows 7 64-bit] (https://putuyuwono.wordpress.com/2015/04/23/building-and-installing-opencv-3-0-on-windows-7-64-bit/)
+Install the library please refer the tutorial [Building and Installing OpenCV with Extra Modules on Windows 7 64-bit](https://putuyuwono.wordpress.com/2015/04/23/building-and-installing-opencv-3-0-on-windows-7-64-bit/)

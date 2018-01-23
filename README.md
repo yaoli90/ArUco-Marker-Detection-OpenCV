@@ -60,7 +60,7 @@ while (cap.isOpened()) {
 }
 return;
 ```
-<img src="https://github.com/yaoli90/aruco-marker-detection-opencv/blob/master/arucomarker.png" width="800">
+<img src="https://github.com/yaoli90/aruco-marker-detection-opencv/blob/master/arucomarker.png" width="600">
  
  
 

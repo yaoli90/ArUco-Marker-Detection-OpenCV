@@ -60,6 +60,14 @@ while (cap.isOpened()) {
 }
 return;
 ```
+
+The detected marker Ids, rotation vectors and tranlation vectors are stored in
+
+```cpp
+std::vector<int> markerIDs;
+std::vector<cv::Vec3d> rvecs, tvecs;
+```
+
 <img src="https://github.com/yaoli90/aruco-marker-detection-opencv/blob/master/arucomarker.png" width="600">
  
  

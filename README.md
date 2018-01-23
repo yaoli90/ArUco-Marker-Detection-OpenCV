@@ -6,6 +6,38 @@ This project implements basic ArUco marker detection based on [ArUco library](ht
 
 ## Getting Started
 
-Install the library please refer the tutorial [Building and Installing OpenCV with Extra Modules on Windows 7 64-bit](https://putuyuwono.wordpress.com/2015/04/23/building-and-installing-opencv-3-0-on-windows-7-64-bit/).
+Library installation refer the tutorial [Building and Installing OpenCV with Extra Modules on Windows 7 64-bit](https://putuyuwono.wordpress.com/2015/04/23/building-and-installing-opencv-3-0-on-windows-7-64-bit/).
 
 Camera calibration refer [camera calibration opencv](https://github.com/yaoli90/camera-calibration-opencv).
+
+## Create ArUco Markers
+
+```cpp
+arucoMarker markers;
+markers.createArucoMarkers();
+```
+Create a fold "arucoMarkers", then run the function
+
+```cpp
+void createArucoMarkers(const std::string dir = "arucoMarkers");
+```
+
+You can change the marker library
+```cpp
+cv::Ptr<cv::aruco::Dictionary> markerDictionary = cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_4X4_50);
+```
+to get simple or more complicated markers.
+
+Print the generated markers and measure the size in millimeters.
+
+## Detect ArUco Markers
+
+```cpp
+cv::FileStorage cameraCalibrationStream("cam_.xml", cv::FileStorage::READ);
+cv::Mat K, D;
+cv::Size imageSize;
+cameraCalibrationStream["K"] >> K;
+cameraCalibrationStream["D"] >> D;
+cameraCalibrationStream["imageSize"] >> imageSize;
+ ```
+

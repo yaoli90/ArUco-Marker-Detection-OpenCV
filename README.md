@@ -22,11 +22,12 @@ Create a fold "arucoMarkers", then run the function
 void createArucoMarkers(const std::string dir = "arucoMarkers");
 ```
 
-You can change the marker library
+You can change the marker library below to get simple or more complicated markers.
 ```cpp
-cv::Ptr<cv::aruco::Dictionary> markerDictionary = cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_4X4_50);
+cv::Ptr<cv::aruco::Dictionary> markerDictionary =
+cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_4X4_50);
 ```
-to get simple or more complicated markers.
+
 
 Print the generated markers and measure the size in millimeters.
 

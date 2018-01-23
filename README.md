@@ -25,13 +25,15 @@ void createArucoMarkers(const std::string dir = "arucoMarkers");
 You can change the marker library below to get simple or more complicated markers.
 ```cpp
 cv::Ptr<cv::aruco::Dictionary> markerDictionary =
-cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_4X4_50);
+ cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_4X4_50);
 ```
 
 
 Print the generated markers and measure the size in millimeters.
 
 ## Detect ArUco Markers
+
+Load camera calibration file "cam_.xml".
 
 ```cpp
 cv::FileStorage cameraCalibrationStream("cam_.xml", cv::FileStorage::READ);
@@ -41,4 +43,24 @@ cameraCalibrationStream["K"] >> K;
 cameraCalibrationStream["D"] >> D;
 cameraCalibrationStream["imageSize"] >> imageSize;
  ```
+ Make sure the video capture frame has same size as your calibration images which are used for camera calibration.
+ 
+```cpp
+cv::VideoCapture cap(0);
+cap.set(CV_CAP_PROP_FRAME_WIDTH, imageSize.width);
+cap.set(CV_CAP_PROP_FRAME_HEIGHT, imageSize.height);
+cv::Mat frame;
+cv::namedWindow("Webcam", CV_WINDOW_AUTOSIZE);
+
+while (cap.isOpened()) {
+	cap >> frame;
+	markers.detectArucoMarkers(frame, K, D, 63.5f);
+	cv::imshow("Webcam", frame);
+	cv::waitKey(10);
+}
+return;
+```
+
+ 
+ 
 
